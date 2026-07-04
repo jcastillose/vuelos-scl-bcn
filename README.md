@@ -1,2 +1,1 @@
-# vuelos-scl-bcn
-Cotización de vuelos SLC-BCN.
+seguimiento SCL-BCN
