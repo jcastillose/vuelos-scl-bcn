@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Seguimiento SCL–BCN · 09 ene 2027 → 19 mar 2027</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+ :root { --tinta:#1a1a1a; --gris:#666; --linea:#e2e2e2; --fondo:#fafaf8; --acento:#0b57d0; --sube:#c0392b; --baja:#1e8449; }
+ body { font-family: -apple-system, "Segoe UI", Roboto, sans-serif; margin:0; background:var(--fondo); color:var(--tinta); }
+ .wrap { max-width:1100px; margin:0 auto; padding:32px 20px 60px; }
+ h1 { font-size:1.5rem; margin:0 0 4px; }
+ h2 { font-size:1.1rem; margin:40px 0 12px; border-bottom:1px solid var(--linea); padding-bottom:6px;}
+ .sub { color:var(--gris); font-size:.9rem; margin-bottom:6px; }
+ .aviso { background:#fff8e1; border:1px solid #f0d878; border-radius:6px; padding:10px 14px; font-size:.85rem; margin:14px 0; }
+ table { width:100%; border-collapse:collapse; font-size:.85rem; background:#fff; }
+ th, td { padding:8px 10px; border-bottom:1px solid var(--linea); text-align:left; vertical-align:top; }
+ th { background:#f0f0ec; font-weight:600; position:sticky; top:0; }
+ td.num, th.num { text-align:right; font-variant-numeric:tabular-nums; }
+ .sube { color:var(--sube); } .baja { color:var(--baja); } .igual { color:var(--gris); }
+ .chip { display:inline-block; font-size:.72rem; padding:1px 8px; border-radius:10px; background:#e8f0fe; color:var(--acento); margin-left:6px;}
+ .chip.lento { background:#fdecea; color:var(--sube); }
+ a { color:var(--acento); text-decoration:none; } a:hover { text-decoration:underline; }
+ .grafico { background:#fff; border:1px solid var(--linea); border-radius:8px; padding:16px; margin-bottom:28px; }
+ canvas { max-height:380px; }
+ .pie { color:var(--gris); font-size:.78rem; margin-top:30px; line-height:1.5; }
+</style>
+</head>
+<body>
+<div class="wrap">
+ <h1>Pasajes Santiago de Chile (SCL) ⇄ Barcelona (BCN)</h1>
+ <div class="sub">Ida: sábado 9 de enero de 2027 · Retorno: viernes 19 de marzo de 2027 · Ida y vuelta, 1 adulto, cabina económica · Precios en CLP</div>
+ <div class="sub" id="resumen"></div>
+ <div id="avisos"></div>
+
+ <h2>Matriz de itinerarios (ordenada por menor duración; luego, por menor precio)</h2>
+ <div style="overflow-x:auto"><table id="matriz"></table></div>
+
+ <h2>Gráfico 1 · Variación de precio: vuelos más rápidos (menos tiempo y escalas)</h2>
+ <div class="grafico"><canvas id="chartRapidos"></canvas></div>
+
+ <h2>Gráfico 2 · Variación de precio: vuelos más largos</h2>
+ <div class="grafico"><canvas id="chartLentos"></canvas></div>
+
+ <h2>Gráfico 3 · Variación de precio por aerolínea (mínimo por consulta)</h2>
+ <div class="grafico"><canvas id="chartAerolineas"></canvas></div>
+
+ <div class="pie" id="pie"></div>
+</div>
+<script>
+const DATA = {"ruta": "SCL → BCN (ida 2027-01-09, retorno 2027-03-19), ida y vuelta, 1 adulto, económica", "moneda": "CLP", "fuente_principal": "Google Flights", "url_verificacion": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI3LTAxLTA5agcIARIDU0NMcgcIARIDQkNOGh4SCjIwMjctMDMtMTlqBwgBEgNCQ05yBwgBEgNTQ0xAAUgBcAGCAQsI____________AZgBAQ&tfu=EgoIABAAGAAgAigB&hl=es-419&curr=CLP", "notas_metodologia": "Precio registrado = tarifa más económica ida y vuelta por itinerario de ida (vista 'Más económicos' de Google Flights); cuando el itinerario solo aparece en la vista 'Recomendado' se usa ese valor. Grupo 'rapido' = duración de ida < 20 h; 'lento' = ≥ 20 h.", "snapshots": [{"fecha": "2026-07-04", "hora_utc": "19:59", "advertencias": ["Google Flights mostró aviso 'Travel restricted: Airspace restrictions may affect flights'."], "itinerarios": [{"id": "IB_LEVEL_directo", "aerolinea": "Iberia (operado por LEVEL)", "salida": "11:50", "duracion": "13 h 25 min", "duracion_min": 805, "escalas": "Directo", "grupo": "rapido", "precio": 1552569}, {"id": "LEVEL_directo", "aerolinea": "LEVEL", "salida": "11:50", "duracion": "13 h 25 min", "duracion_min": 805, "escalas": "Directo", "grupo": "rapido", "precio": 1556433}, {"id": "IB_MAD_1535_dia", "aerolinea": "Iberia", "salida": "12:50", "duracion": "15 h 35 min", "duracion_min": 935, "escalas": "1 (MAD)", "grupo": "rapido", "precio": 3199523}, {"id": "IB_LATAM_MAD_1535", "aerolinea": "Iberia + LATAM", "salida": "00:50", "duracion": "15 h 35 min", "duracion_min": 935, "escalas": "1 (MAD)", "grupo": "rapido", "precio": 1607204}, {"id": "LATAM_IB_MAD_1610", "aerolinea": "LATAM + Iberia", "salida": "21:00", "duracion": "16 h 10 min", "duracion_min": 970, "escalas": "1 (MAD)", "grupo": "rapido", "precio": 1499548}, {"id": "LATAM_IB_MAD_1645", "aerolinea": "LATAM + Iberia", "salida": "16:00", "duracion": "16 h 45 min", "duracion_min": 1005, "escalas": "1 (MAD)", "grupo": "rapido", "precio": 1508885}, {"id": "LATAM_IB_GRU_1800", "aerolinea": "LATAM / Iberia", "salida": "15:45", "duracion": "18 h 0 min", "duracion_min": 1080, "escalas": "1 (GRU)", "grupo": "rapido", "precio": 1592934}, {"id": "LATAM_IB_MAD_1820", "aerolinea": "LATAM + Iberia", "salida": "16:00", "duracion": "18 h 20 min", "duracion_min": 1100, "escalas": "1 (MAD)", "grupo": "rapido", "precio": 1482099}, {"id": "LATAM_GRU_1855", "aerolinea": "LATAM", "salida": "14:50", "duracion": "18 h 55 min", "duracion_min": 1135, "escalas": "1 (GRU)", "grupo": "rapido", "precio": 1467426}, {"id": "LATAM_UX_MAD_2035", "aerolinea": "LATAM + Air Europa", "salida": "16:00", "duracion": "20 h 35 min", "duracion_min": 1235, "escalas": "1 (MAD)", "grupo": "lento", "precio": 1603234}, {"id": "AVIANCA_BOG_2605", "aerolinea": "Avianca", "salida": "07:25", "duracion": "26 h 5 min", "duracion_min": 1565, "escalas": "1 (BOG)", "grupo": "lento", "precio": 1364912}, {"id": "AC_YYZ_YUL_3240", "aerolinea": "Air Canada", "salida": "20:55", "duracion": "32 h 40 min", "duracion_min": 1960, "escalas": "2 (YYZ, YUL)", "grupo": "lento", "precio": 1119217}]}]};
+const fmt = n => "CLP " + n.toLocaleString("es-CL");
+const snaps = DATA.snapshots;
+const ultimo = snaps[snaps.length-1];
+const previo = snaps.length > 1 ? snaps[snaps.length-2] : null;
+const fechas = snaps.map(s => s.fecha);
+
+document.getElementById("resumen").textContent =
+  "Consultas acumuladas: " + snaps.length + " · Última consulta: " + ultimo.fecha + " " + (ultimo.hora_utc||"") + " UTC · Fuente: " + DATA.fuente_principal;
+
+(ultimo.advertencias||[]).forEach(a => {
+  const d = document.createElement("div"); d.className = "aviso"; d.textContent = "⚠ " + a;
+  document.getElementById("avisos").appendChild(d);
+});
+
+// ---- Matriz ----
+const orden = [...ultimo.itinerarios].sort((a,b) => a.duracion_min - b.duracion_min || a.precio - b.precio);
+let rows = "<tr><th>#</th><th>Aerolínea</th><th>Salida</th><th>Duración</th><th>Escalas</th><th class='num'>Precio actual</th><th class='num'>Δ vs. consulta previa</th><th class='num'>Δ vs. primera consulta</th><th>Verificar</th></tr>";
+orden.forEach((it, i) => {
+  const prev = previo ? (previo.itinerarios.find(x => x.id === it.id) || null) : null;
+  const first = snaps[0].itinerarios.find(x => x.id === it.id) || null;
+  const delta = (ref) => {
+    if (!ref) return "<span class='igual'>—</span>";
+    const d = it.precio - ref.precio;
+    if (d === 0) return "<span class='igual'>0</span>";
+    const cls = d > 0 ? "sube" : "baja"; const sig = d > 0 ? "▲ +" : "▼ −";
+    return "<span class='" + cls + "'>" + sig + Math.abs(d).toLocaleString("es-CL") + "</span>";
+  };
+  const chip = it.grupo === "rapido" ? "<span class='chip'>rápido</span>" : "<span class='chip lento'>largo</span>";
+  rows += "<tr><td>" + (i+1) + "</td><td>" + it.aerolinea + chip + "</td><td>" + it.salida + "</td><td>" + it.duracion +
+    "</td><td>" + it.escalas + "</td><td class='num'><a href='" + DATA.url_verificacion + "' target='_blank' title='Abrir la consulta en Google Flights'>" + fmt(it.precio) + "</a></td><td class='num'>" + delta(prev) +
+    "</td><td class='num'>" + (previo ? delta(first) : "<span class='igual'>—</span>") +
+    "</td><td><a href='" + DATA.url_verificacion + "' target='_blank'>Google Flights ↗</a></td></tr>";
+});
+document.getElementById("matriz").innerHTML = rows;
+
+// ---- Series por itinerario ----
+const PALETA = ["#0b57d0","#c0392b","#1e8449","#8e44ad","#d68910","#16a085","#7f8c8d","#2c3e50","#e74c8b","#5d6d1e","#a04000","#1f618d"];
+function seriesPorGrupo(grupo) {
+  const ids = new Map();
+  snaps.forEach(s => s.itinerarios.filter(i => i.grupo === grupo).forEach(i => ids.set(i.id, i)));
+  return [...ids.values()].sort((a,b)=>a.duracion_min-b.duracion_min).map((it, k) => ({
+    label: it.aerolinea + " · " + it.duracion + " · " + it.escalas,
+    data: snaps.map(s => { const m = s.itinerarios.find(x => x.id === it.id); return m ? m.precio : null; }),
+    borderColor: PALETA[k % PALETA.length], backgroundColor: PALETA[k % PALETA.length],
+    spanGaps: true, tension: .15, pointRadius: 4
+  }));
+}
+const OPTS = {
+  responsive: true,
+  plugins: { legend: { position: "bottom", labels: { boxWidth: 12, font: { size: 10 } } },
+    tooltip: { callbacks: { label: c => c.dataset.label + ": " + fmt(c.parsed.y) } } },
+  scales: { y: { ticks: { callback: v => (v/1000).toLocaleString("es-CL") + " mil" }, title: { display:true, text:"CLP" } } }
+};
+new Chart(document.getElementById("chartRapidos"), { type:"line", data:{ labels: fechas, datasets: seriesPorGrupo("rapido") }, options: OPTS });
+new Chart(document.getElementById("chartLentos"),  { type:"line", data:{ labels: fechas, datasets: seriesPorGrupo("lento") },  options: OPTS });
+
+// ---- Por aerolínea (mínimo por snapshot) ----
+const aeros = [...new Set(snaps.flatMap(s => s.itinerarios.map(i => i.aerolinea)))].sort();
+const dsAero = aeros.map((a, k) => ({
+  label: a,
+  data: snaps.map(s => { const ps = s.itinerarios.filter(i => i.aerolinea === a).map(i => i.precio); return ps.length ? Math.min(...ps) : null; }),
+  borderColor: PALETA[k % PALETA.length], backgroundColor: PALETA[k % PALETA.length],
+  spanGaps: true, tension: .15, pointRadius: 4
+}));
+new Chart(document.getElementById("chartAerolineas"), { type:"line", data:{ labels: fechas, datasets: dsAero }, options: OPTS });
+
+document.getElementById("pie").innerHTML =
+  "<b>Metodología.</b> " + DATA.notas_metodologia +
+  " Todos los valores provienen de la misma consulta verificable: <a href='" + DATA.url_verificacion + "' target='_blank'>" + DATA.fuente_principal + " (SCL→BCN, 09-01-2027 / 19-03-2027) ↗</a>." +
+  " Referencias contextuales de la ruta: <a href='https://www.flightsfrom.com/SCL-BCN' target='_blank'>FlightsFrom (único directo: Iberia IB2606, A330-200) ↗</a> · <a href='https://www.kayak.com/flight-routes/Santiago-Arturo-Merino-Benitez-SCL/Barcelona-El-Prat-BCN' target='_blank'>KAYAK ruta SCL–BCN ↗</a>." +
+  " Los precios de vuelos cambian con alta frecuencia; verifique en el enlace antes de comprar.";
+</script>
+</body>
+</html>
