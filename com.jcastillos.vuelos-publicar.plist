@@ -7,11 +7,11 @@
   <key>ProgramArguments</key>
   <array>
     <string>/bin/zsh</string>
-    <string>/Users/jcastillos/Local Documents/Claude/vuelos-scl-bcn/publicar.sh</string>
+    <string>/Users/jcastillo_s/Local Documents/Claude/vuelos-scl-bcn/publicar.sh</string>
   </array>
   <key>WatchPaths</key>
   <array>
-    <string>/Users/jcastillos/Local Documents/Claude/vuelos-scl-bcn/vuelos_scl_bcn_snapshots.json</string>
+    <string>/Users/jcastillo_s/Local Documents/Claude/vuelos-scl-bcn/vuelos_scl_bcn_snapshots.json</string>
   </array>
   <key>ThrottleInterval</key>
   <integer>300</integer>

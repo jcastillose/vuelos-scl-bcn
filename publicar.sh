@@ -1,7 +1,7 @@
 #!/bin/zsh
 # Publica automáticamente los cambios del seguimiento SCL-BCN en GitHub Pages.
 # Lo ejecuta launchd cada vez que cambia vuelos_scl_bcn_snapshots.json.
-REPO="/Users/jcastillos/Local Documents/Claude/vuelos-scl-bcn"
+REPO="/Users/jcastillo_s/Local Documents/Claude/vuelos-scl-bcn"
 cd "$REPO" || exit 1
 # Limpia locks huérfanos que deja el entorno aislado de Claude
 rm -f .git/HEAD.lock .git/index.lock .git/objects/maintenance.lock
