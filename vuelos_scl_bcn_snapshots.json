@@ -391,6 +391,135 @@
      "precio": 1119217
     }
    ]
+  },
+  {
+   "fecha": "2026-07-04",
+   "hora_utc": "21:37",
+   "advertencias": [
+    "Íconos ⚠ junto a itinerarios con escalas largas (Air Canada vía YYZ/YUL y Avianca vía BOG con 9 h 40 min de conexión); sin banner de restricción de espacio aéreo visible en esta consulta."
+   ],
+   "itinerarios": [
+    {
+     "id": "IB_LEVEL_directo",
+     "aerolinea": "Iberia (operado por LEVEL)",
+     "salida": "11:50",
+     "duracion": "13 h 25 min",
+     "duracion_min": 805,
+     "escalas": "Directo",
+     "grupo": "rapido",
+     "precio": 1552569
+    },
+    {
+     "id": "LEVEL_directo",
+     "aerolinea": "LEVEL",
+     "salida": "11:50",
+     "duracion": "13 h 25 min",
+     "duracion_min": 805,
+     "escalas": "Directo",
+     "grupo": "rapido",
+     "precio": 1556433
+    },
+    {
+     "id": "IB_MAD_1535_dia",
+     "aerolinea": "Iberia + LATAM (diurno)",
+     "salida": "12:50",
+     "duracion": "15 h 35 min",
+     "duracion_min": 935,
+     "escalas": "1 (MAD)",
+     "grupo": "rapido",
+     "precio": 2762674
+    },
+    {
+     "id": "IB_LATAM_MAD_1535",
+     "aerolinea": "Iberia + LATAM",
+     "salida": "00:50",
+     "duracion": "15 h 35 min",
+     "duracion_min": 935,
+     "escalas": "1 (MAD)",
+     "grupo": "rapido",
+     "precio": 1607204
+    },
+    {
+     "id": "LATAM_IB_MAD_1610",
+     "aerolinea": "LATAM + Iberia",
+     "salida": "21:00",
+     "duracion": "16 h 10 min",
+     "duracion_min": 970,
+     "escalas": "1 (MAD)",
+     "grupo": "rapido",
+     "precio": 1499548
+    },
+    {
+     "id": "LATAM_IB_MAD_1645",
+     "aerolinea": "LATAM + Iberia",
+     "salida": "16:00",
+     "duracion": "16 h 45 min",
+     "duracion_min": 1005,
+     "escalas": "1 (MAD)",
+     "grupo": "rapido",
+     "precio": 1508885
+    },
+    {
+     "id": "LATAM_IB_GRU_1800",
+     "aerolinea": "LATAM / Iberia",
+     "salida": "15:45",
+     "duracion": "18 h 0 min",
+     "duracion_min": 1080,
+     "escalas": "1 (GRU)",
+     "grupo": "rapido",
+     "precio": 1592934
+    },
+    {
+     "id": "LATAM_IB_MAD_1820",
+     "aerolinea": "LATAM + Iberia",
+     "salida": "16:00",
+     "duracion": "18 h 20 min",
+     "duracion_min": 1100,
+     "escalas": "1 (MAD)",
+     "grupo": "rapido",
+     "precio": 1482099
+    },
+    {
+     "id": "LATAM_GRU_1855",
+     "aerolinea": "LATAM",
+     "salida": "14:50",
+     "duracion": "18 h 55 min",
+     "duracion_min": 1135,
+     "escalas": "1 (GRU)",
+     "grupo": "rapido",
+     "precio": 1467426
+    },
+    {
+     "id": "LATAM_UX_MAD_2035",
+     "aerolinea": "LATAM + Air Europa",
+     "salida": "16:00",
+     "duracion": "20 h 35 min",
+     "duracion_min": 1235,
+     "escalas": "1 (MAD)",
+     "grupo": "lento",
+     "precio": 1612723
+    },
+    {
+     "id": "AVIANCA_BOG_2605",
+     "aerolinea": "Avianca",
+     "salida": "07:25",
+     "duracion": "26 h 5 min",
+     "duracion_min": 1565,
+     "escalas": "1 (BOG)",
+     "grupo": "lento",
+     "precio": 1364912
+    },
+    {
+     "id": "AC_YYZ_YUL_3240",
+     "aerolinea": "Air Canada",
+     "salida": "20:55",
+     "duracion": "32 h 40 min",
+     "duracion_min": 1960,
+     "escalas": "2 (YYZ, YUL)",
+     "grupo": "lento",
+     "precio": 1119217
+    }
+   ]
   }
  ]
 }
