@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.jcastillos.vuelos-publicar</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/zsh</string>
+    <string>/Users/jcastillos/Local Documents/Claude/vuelos-scl-bcn/publicar.sh</string>
+  </array>
+  <key>WatchPaths</key>
+  <array>
+    <string>/Users/jcastillos/Local Documents/Claude/vuelos-scl-bcn/vuelos_scl_bcn_snapshots.json</string>
+  </array>
+  <key>ThrottleInterval</key>
+  <integer>300</integer>
+  <key>StandardOutPath</key>
+  <string>/tmp/vuelos-publicar.log</string>
+  <key>StandardErrorPath</key>
+  <string>/tmp/vuelos-publicar.err</string>
+</dict>
+</plist>
