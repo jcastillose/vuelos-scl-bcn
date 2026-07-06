@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 """Genera index.html desde vuelos_scl_bcn_snapshots.json.
 Uso en ejecuciones futuras: añadir un nuevo objeto a "snapshots" en el JSON
-(manteniendo los mismos "id" de itinerario) y volver a ejecutar este script."""
+(manteniendo los mismos "id" de itinerario) y volver a ejecutar este script.
+Cada snapshot admite un campo opcional "interpretacion" (string): lectura
+analítica de las variaciones de esa consulta. La página muestra la más
+reciente y pliega las anteriores en un desplegable."""
 import json, os
 
 BASE = os.path.dirname(os.path.abspath(__file__))
@@ -33,6 +36,7 @@ html = """<!DOCTYPE html>
  .chip.lento { background:#fdecea; color:var(--sube); }
  a { color:var(--acento); text-decoration:none; } a:hover { text-decoration:underline; }
  .grafico { background:#fff; border:1px solid var(--linea); border-radius:8px; padding:16px; margin-bottom:28px; }
+ .interp { background:#fff; border:1px solid var(--linea); border-left:4px solid var(--acento); border-radius:8px; padding:14px 16px; font-size:.9rem; line-height:1.55; }
  canvas { max-height:380px; }
  .pie { color:var(--gris); font-size:.78rem; margin-top:30px; line-height:1.5; }
 </style>
@@ -46,6 +50,9 @@ html = """<!DOCTYPE html>
 
  <h2>Matriz de itinerarios (ordenada por menor duración; luego, por menor precio)</h2>
  <div style="overflow-x:auto"><table id="matriz"></table></div>
+
+ <h2 id="interpTitulo">Interpretación de las variaciones</h2>
+ <div class="interp" id="interpretacion"></div>
 
  <h2>Gráfico 1 · Variación de precio: vuelos más rápidos (menos tiempo y escalas)</h2>
  <div class="grafico"><canvas id="chartRapidos"></canvas></div>
@@ -94,6 +101,21 @@ orden.forEach((it, i) => {
     "</td><td><a href='" + DATA.url_verificacion + "' target='_blank'>Google Flights ↗</a></td></tr>";
 });
 document.getElementById("matriz").innerHTML = rows;
+
+// ---- Interpretación de las variaciones ----
+const interps = snaps.filter(s => s.interpretacion).map(s => ({ fecha: s.fecha, texto: s.interpretacion })).reverse();
+if (interps.length) {
+  const act = interps[0], hist = interps.slice(1);
+  let ih = "<p style='margin:0'><b>" + act.fecha + ".</b> " + act.texto + "</p>";
+  if (hist.length) {
+    ih += "<details style='margin-top:10px'><summary style='cursor:pointer;color:var(--gris);font-size:.8rem'>Interpretaciones anteriores (" + hist.length + ")</summary>" +
+      hist.map(h => "<p style='font-size:.82rem;color:var(--gris);margin:8px 0 0'><b>" + h.fecha + ".</b> " + h.texto + "</p>").join("") + "</details>";
+  }
+  document.getElementById("interpretacion").innerHTML = ih;
+} else {
+  document.getElementById("interpTitulo").style.display = "none";
+  document.getElementById("interpretacion").style.display = "none";
+}
 
 // ---- Series por itinerario ----
 const PALETA = ["#0b57d0","#c0392b","#1e8449","#8e44ad","#d68910","#16a085","#7f8c8d","#2c3e50","#e74c8b","#5d6d1e","#a04000","#1f618d"];
