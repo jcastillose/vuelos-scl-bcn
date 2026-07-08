@@ -1,0 +1,5 @@
+# Respaldos locales y temporales — no publicar en GitHub Pages
+__pycache__/
+*.backup_*.py
+*.backup_*.html
+*.backup_*.json

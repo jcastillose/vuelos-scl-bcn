@@ -6,17 +6,22 @@ Cada snapshot admite un campo opcional "interpretacion" (string): lectura
 analítica de las variaciones de esa consulta. La página muestra la más
 reciente y pliega las anteriores en un desplegable."""
 import json, os
+from datetime import datetime, timezone
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 with open(os.path.join(BASE, "vuelos_scl_bcn_snapshots.json"), encoding="utf-8") as f:
     data = json.load(f)
 
 payload = json.dumps(data, ensure_ascii=False)
+build_utc = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
 html = """<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <title>Seguimiento SCL–BCN · 09 ene 2027 → 19 mar 2027</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
@@ -46,6 +51,7 @@ html = """<!DOCTYPE html>
  <h1>Pasajes Santiago de Chile (SCL) ⇄ Barcelona (BCN)</h1>
  <div class="sub">Ida: sábado 9 de enero de 2027 · Retorno: viernes 19 de marzo de 2027 · Ida y vuelta, 1 adulto, cabina económica · Precios en CLP</div>
  <div class="sub" id="resumen"></div>
+ <div class="sub" id="frescura"></div>
  <div id="avisos"></div>
 
  <h2>Matriz de itinerarios (ordenada por menor duración; luego, por menor precio)</h2>
@@ -66,7 +72,9 @@ html = """<!DOCTYPE html>
  <div class="pie" id="pie"></div>
 </div>
 <script>
-const DATA = __PAYLOAD__;
+const INLINE = __PAYLOAD__;
+const BUILD_UTC = "__BUILD__";
+function render(DATA){
 const fmt = n => "CLP " + n.toLocaleString("es-CL");
 const snaps = DATA.snapshots;
 const ultimo = snaps[snaps.length-1];
@@ -75,6 +83,9 @@ const fechas = snaps.map(s => s.fecha);
 
 document.getElementById("resumen").textContent =
   "Consultas acumuladas: " + snaps.length + " · Última consulta: " + ultimo.fecha + " " + (ultimo.hora_utc||"") + " UTC · Fuente: " + DATA.fuente_principal;
+
+const _fr = document.getElementById("frescura");
+if (_fr) _fr.innerHTML = "🟢 Datos cargados en vivo desde el JSON en cada visita (sin caché) · Página generada: " + BUILD_UTC + " · <a href='#' onclick='location.reload();return false;'>recargar ahora</a>";
 
 (ultimo.advertencias||[]).forEach(a => {
   const d = document.createElement("div"); d.className = "aviso"; d.textContent = "⚠ " + a;
@@ -153,11 +164,25 @@ document.getElementById("pie").innerHTML =
   " Todos los valores provienen de la misma consulta verificable: <a href='" + DATA.url_verificacion + "' target='_blank'>" + DATA.fuente_principal + " (SCL→BCN, 09-01-2027 / 19-03-2027) ↗</a>." +
   " Referencias contextuales de la ruta: <a href='https://www.flightsfrom.com/SCL-BCN' target='_blank'>FlightsFrom (único directo: Iberia IB2606, A330-200) ↗</a> · <a href='https://www.kayak.com/flight-routes/Santiago-Arturo-Merino-Benitez-SCL/Barcelona-El-Prat-BCN' target='_blank'>KAYAK ruta SCL–BCN ↗</a>." +
   " Los precios de vuelos cambian con alta frecuencia; verifique en el enlace antes de comprar.";
+}
+
+// Bootstrap: en cada visita carga los datos frescos del JSON con cache-buster (?t=timestamp)
+// y cabecera no-store; si la red falla, usa la copia embebida (INLINE). Así cualquier
+// actualización publicada se aprecia de inmediato al abrir o recargar, sin que la caché
+// del HTML muestre precios viejos.
+(function () {
+  var url = "vuelos_scl_bcn_snapshots.json?t=" + Date.now();
+  fetch(url, { cache: "no-store" })
+    .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+    .then(function (fresco) { render(fresco); })
+    .catch(function () { render(INLINE); });
+})();
 </script>
 </body>
 </html>"""
 
 html = html.replace("__PAYLOAD__", payload)
+html = html.replace("__BUILD__", build_utc)
 out = os.path.join(BASE, "index.html")
 with open(out, "w", encoding="utf-8") as f:
     f.write(html)
