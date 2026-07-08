@@ -1312,7 +1312,8 @@
       "advertencias": [
         "Íconos de advertencia ⚠ sobre los itinerarios de Air Canada con escalas (2 paradas YYZ/YUL); en esta consulta NO se capturó el banner global 'Travel restricted / Airspace restrictions may affect flights'.",
         "Precios consistentes entre las vistas en vivo 'Recomendado' y 'Más económicos' (a diferencia del 07-07 12:12 UTC); no hubo inestabilidad de caché intradía.",
-        "Se expandió 'Ver más vuelos' (>100 itinerarios) para verificar autoconexiones; la autoconexión Air Canada+Vueling vía Ginebra (42 h 05) sigue presente a CLP 1.425.661. Consulta única del día (10:48 hora Chile)."
+        "Se expandió 'Ver más vuelos' (>100 itinerarios) para verificar autoconexiones; la autoconexión Air Canada+Vueling vía Ginebra (42 h 05) sigue presente a CLP 1.425.661. Consulta única del día (10:48 hora Chile).",
+        "Complemento de re-verificación (14:50 UTC, misma jornada): el banner global 'Travel restricted — Airspace restrictions may affect flights' SÍ aparecía en la vista 'Recomendado'. Además, en 'Recomendado' Air Canada figuraba a CLP 1.291.589 y Avianca a CLP 1.409.824, por encima de sus valores en 'Más económicos' (1.216.830 y 1.388.989)."
       ],
       "itinerarios": [
         {
