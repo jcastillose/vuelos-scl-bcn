@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.jcastillos.vuelos-abrir-chrome</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/usr/bin/open</string>
+    <string>-g</string>
+    <string>-a</string>
+    <string>Google Chrome</string>
+  </array>
+  <!-- Se lanza a las 07:58 hora local, ~7 min antes de que la tarea de Claude
+       dispare (cron 0 8 + jitter ~334 s => efectivo ~08:05-08:11). El flag -g
+       abre Chrome en segundo plano sin robar el foco; si ya está abierto, no hace
+       nada. La extensión claude-in-chrome se reconecta sola al arrancar Chrome. -->
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key>
+    <integer>7</integer>
+    <key>Minute</key>
+    <integer>58</integer>
+  </dict>
+  <key>StandardOutPath</key>
+  <string>/tmp/vuelos-abrir-chrome.log</string>
+  <key>StandardErrorPath</key>
+  <string>/tmp/vuelos-abrir-chrome.err</string>
+</dict>
+</plist>
