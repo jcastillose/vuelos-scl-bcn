@@ -1687,6 +1687,113 @@
         }
       ],
       "interpretacion": "Verdad incómoda primero: si no quieres volar 33-37 h, viajar se encareció esta semana, aunque el titular del 'mínimo' apenas se mueva. [Seguro] El piso absoluto lo sigue fijando la conexión norteamericana larga de Air Canada (2 paradas YYZ/YUL, 32 h 40, sal. 20:55): CLP 1.098.945, prácticamente plano (+6.997; +0,64 %) frente a 1.091.948. Debajo de todo lo demás aparece además Air Canada + SWISS vía Zúrich (37 h 10) a 1.164.465, 2ª más barata en absoluto pero a costa de más horas. [Seguro] El bloque directo europeo sigue anclado y casi inmóvil: Iberia/Level 13 h 25 sube a 1.566.052 (+0,54 %) y LEVEL baja a 1.568.393 (-0,92 %); son el techo práctico de comodidad. [Seguro] Lo relevante ocurre en el tramo intermedio, y es al alza: LATAM+Iberia vía MAD 16 h 10 salta a 1.926.537 (+20,9 %) y Avianca vía BOG 26 h 5 se dispara a 1.896.429 (+36,1 %), su mayor nivel de la serie; el 16 h 45 vía MAD sube a 1.699.018 (+3,7 %). [Seguro] Cambio estructural de la parrilla: se retiraron tres itinerarios LATAM+Iberia que veníamos rastreando —entre ellos LATAM_IB_MAD_1820 (18 h 20, sal. 16:00), que era el rápido más barato a 1.472.070— y el 15 h 35 de 00:50 hoy solo existe en clase ejecutiva. [Probable] Esa retirada es una reindexación de tarifas más que una subida pura: en su lugar emerge LATAM+Iberia 17 h 20 (1 parada 4 h MAD, sal. 17:00) a 1.471.121, que hereda casi exactamente el precio del que desapareció y queda como la opción sub-20 h más barata, por debajo de los directos. Lectura de conjunto: para el pasajero real la decisión se reduce a tres niveles — 1,10 M vía Canadá con 33-37 h; ~1,47 M con el nuevo LATAM+Iberia 17 h 20 (1 escala en Madrid); ~1,57 M en directo Iberia/Level. Todo lo intermedio de LATAM/Iberia/Avianca se movió al alza y perdió atractivo esta semana. La escala larga vía Lima (LATAM+Iberia, 40 h 15) queda en 1.369.969 (+1,5 %), segunda entre las rastreadas pero irrelevante por sus ~40 h."
+    },
+    {
+      "fecha": "2026-07-14 09:32",
+      "hora_utc": "2026-07-14 13:32 UTC",
+      "advertencias": [
+        "No apareció ningún banner global de 'Travel restricted / Airspace restrictions' en esta consulta.",
+        "Las vistas 'Recomendado' y 'Más económicos' devolvieron HOY exactamente los mismos itinerarios y precios (ambas abren en CLP 1.079.781); no hubo divergencia entre pestañas.",
+        "Iconos de advertencia ⚠ sobre Air Canada (2 paradas YYZ/YUL, con variante de 'Cambio de aeropuerto').",
+        "Air Canada mostró una variante duplicada con 'Cambio de aeropuerto' (op. Air Canada Express - Jazz) a CLP 1.106.497 (aparece dos veces); se dedujo y se conservó la más barata (1.079.781) para AC_YYZ_YUL_3240.",
+        "Churn del bloque LATAM+Iberia: desaparecieron tres itinerarios rastreados el 2026-07-13 — LATAM_IB_MAD_1610 (16 h 10, sal. 21:00, 1.926.537), LATAM_IB_MAD_1645 (16 h 45, sal. 16:00, 1.699.018) y AVIANCA_BOG_2605 (26 h 5, sal. 07:25, 1.896.429). Se omiten hoy.",
+        "Aparecen tres itinerarios nuevos vía MAD: LATAM+Iberia 15 h 45 (sal. 17:00, 2 h 25 MAD) a 1.607.926 → id nuevo LATAM_IB_MAD_1545; LATAM+Iberia 18 h 25 (sal. 22:00, 4 h 10 MAD) a 1.560.557 → id nuevo LATAM_IB_MAD_1825; LATAM+Air Europa 19 h 35 (sal. 17:00, 6 h 10 MAD) a 1.612.716 → id nuevo LATAM_AE_MAD_1935.",
+        "El 15 h 35 vía MAD (sal. 00:50) reaparece en cabina turista a CLP 2.560.461 (emisiones +237 %, 2.194 kg CO2e); se mapea a IB_MAD_1535_dia para conservar la serie.",
+        "La familia de escala larga vía LIM hoy solo ofrece la variante de 38 h 55 (sal. 21:50) a 1.350.960; se mapea a LATAM_IB_3950 (que el 2026-07-13 registraba 40 h 15, sal. 20:30)."
+      ],
+      "itinerarios": [
+        {
+          "id": "IB_LEVEL_directo",
+          "aerolinea": "Iberia (operado por LEVEL)",
+          "escalas": "Directo",
+          "duracion": "13 h 25 min",
+          "duracion_min": 805,
+          "salida": "11:50",
+          "grupo": "rapido",
+          "precio": 1552563
+        },
+        {
+          "id": "LEVEL_directo",
+          "aerolinea": "LEVEL",
+          "escalas": "Directo",
+          "duracion": "13 h 25 min",
+          "duracion_min": 805,
+          "salida": "11:50",
+          "grupo": "rapido",
+          "precio": 1539015
+        },
+        {
+          "id": "IB_MAD_1535_dia",
+          "aerolinea": "Iberia + LATAM (diurno)",
+          "escalas": "1 (MAD)",
+          "duracion": "15 h 35 min",
+          "duracion_min": 935,
+          "salida": "12:50",
+          "grupo": "rapido",
+          "precio": 2560461
+        },
+        {
+          "id": "LATAM_IB_MAD_1545",
+          "aerolinea": "LATAM + Iberia",
+          "escalas": "1 (MAD)",
+          "duracion": "15 h 45 min",
+          "duracion_min": 945,
+          "salida": "17:00",
+          "grupo": "rapido",
+          "precio": 1607926
+        },
+        {
+          "id": "LATAM_IB_MAD_1720",
+          "aerolinea": "LATAM + Iberia",
+          "escalas": "1 (MAD)",
+          "duracion": "17 h 20 min",
+          "duracion_min": 1040,
+          "salida": "17:00",
+          "grupo": "rapido",
+          "precio": 1477169
+        },
+        {
+          "id": "LATAM_IB_MAD_1825",
+          "aerolinea": "LATAM + Iberia",
+          "escalas": "1 (MAD)",
+          "duracion": "18 h 25 min",
+          "duracion_min": 1105,
+          "salida": "22:00",
+          "grupo": "rapido",
+          "precio": 1560557
+        },
+        {
+          "id": "LATAM_AE_MAD_1935",
+          "aerolinea": "LATAM + Air Europa",
+          "escalas": "1 (MAD)",
+          "duracion": "19 h 35 min",
+          "duracion_min": 1175,
+          "salida": "17:00",
+          "grupo": "rapido",
+          "precio": 1612716
+        },
+        {
+          "id": "AC_YYZ_YUL_3240",
+          "aerolinea": "Air Canada",
+          "escalas": "2 (YYZ, YUL)",
+          "duracion": "32 h 40 min",
+          "duracion_min": 1960,
+          "salida": "20:55",
+          "grupo": "lento",
+          "precio": 1079781
+        },
+        {
+          "id": "LATAM_IB_3950",
+          "aerolinea": "LATAM + Iberia (esc. larga vía LIM, op. LATAM Perú/Level)",
+          "escalas": "1 (LIM)",
+          "duracion": "38 h 55 min",
+          "duracion_min": 2335,
+          "salida": "21:50",
+          "grupo": "lento",
+          "precio": 1350960
+        }
+      ],
+      "interpretacion": "Verdad incómoda primero: el titular “vuelo barato” sigue costando 32 h 40 y 2 escalas; todo lo mínimamente cómodo permanece por encima de 1,47 M, y la parrilla intermedia de LATAM+Iberia volvió a barajarse sin abaratar nada. [Seguro] El piso absoluto lo fija otra vez Air Canada vía YYZ/YUL (2 paradas, 32 h 40, sal. 20:55): CLP 1.079.781, que además baja −19.164 (−1,74 %) frente a 1.098.945. Es lo más barato del día pero al precio de 33 h y doble conexión. [Seguro] El bloque directo europeo cede un poco y sigue siendo el techo de comodidad: LEVEL 13 h 25 baja a 1.539.015 (−1,87 %) e Iberia/Level a 1.552.563 (−0,86 %). [Seguro] La mejor relación tiempo/precio no se mueve: LATAM+Iberia 17 h 20 (1 parada 4 h MAD, sal. 17:00) queda plano en 1.477.169 (+6.048; +0,41 %) y se mantiene como la opción sub-20 h más barata, por debajo de los directos. [Seguro] La escala larga vía Lima (LATAM_IB_3950) hoy aparece solo como 38 h 55 (sal. 21:50) a 1.350.960 (−1,39 %): segunda entre las rastreadas, pero irrelevante por sus ~39 h. El 15 h 35 vía MAD (sal. 00:50, IB_MAD_1535_dia) reaparece en turista a 2.560.461, baja −205.909 (−7,44 %) desde 2.766.370, pero con emisiones marcadas +237 % (2.194 kg CO2e) y sigue siendo lo más caro rastreado: un outlier tarifario, no una opción real. [Probable] La rotación del tramo intermedio es reindexación, no oferta nueva: desaparecieron LATAM_IB_MAD_1610 (16 h 10, 1.926.537), LATAM_IB_MAD_1645 (16 h 45, 1.699.018) y Avianca vía BOG (26 h 5, 1.896.429), y entraron tres itinerarios vía MAD —LATAM+Iberia 15 h 45 (sal. 17:00) a 1.607.926, LATAM+Iberia 18 h 25 (sal. 22:00) a 1.560.557 y LATAM+Air Europa 19 h 35 (sal. 17:00) a 1.612.716— todos por ENCIMA del 17 h 20 superviviente; ninguno mejora la frontera barato-cómodo. [Suposición] Que “Recomendado” y “Más económicos” devolvieran hoy exactamente las mismas 11 filas y el mismo mínimo (1.079.781) sugiere baja rotación de caché intradía esta mañana, a diferencia de la inestabilidad multi-tarifa de Air Canada de ayer. Lectura de conjunto: tres niveles reales para el pasajero — ~1,08 M vía Canadá con 33 h y 2 escalas; ~1,48 M con LATAM+Iberia 17 h 20 (una escala en Madrid), el mejor valor por hora; ~1,54 M en directo LEVEL. El resto (los nuevos MAD/Air Europa de 1,56–1,61 M y el outlier de 2,56 M) queda dominado: o más lento y más caro, o absurdamente caro. Neto intersemanal: el piso y los directos cedieron 1–2 %, el punto dulce sub-20 h quedó plano, y el tramo intermedio se reordenó sin crear una mejor oferta."
     }
   ]
 }
