@@ -1901,6 +1901,116 @@
         }
       ],
       "interpretacion": "Verdad incómoda primero: [Seguro] el 'punto dulce' que veníamos señalando —LATAM+Iberia 17 h 20 vía Madrid— dejó de serlo hoy: subió +105.652 (+7,15%) hasta 1.582.821 y quedó por ENCIMA de los dos directos europeos; ya no es la opción sub-20 h más barata. [Seguro] Ese lugar lo toma ahora el directo LEVEL 13 h 25 a 1.529.632 (−9.383; −0,61%): por primera vez en el seguimiento reciente, el vuelo más rápido (directo) es también el más barato de la franja cómoda, sin penalización de tiempo. Detrás quedan LATAM+Iberia 18 h 25 (1.554.963; −5.594; −0,36%) e Iberia/Level directo (1.557.565; +5.002; +0,32%). [Seguro] El piso absoluto no se mueve: Air Canada vía YYZ/YUL (2 escalas, 32 h 40, sal. 20:55) marca 1.079.499 (−282; −0,03%, plano); sigue siendo lo más barato pero al precio de ~33 h y doble conexión. [Probable] Segundo en precio aparece un itinerario NUEVO de autoconexión: Air Canada + Ryanair vía Toronto y Dublín (35 h 5, sal. 20:55) a 1.320.336 (id nuevo SELF_YYZ_DUB_3505); más barato que cualquier escala única, pero exige recoger equipaje y recomprar el tramo por cuenta propia (riesgo de conexión sobre el pasajero) y ~35 h de viaje: descartable salvo para cazadores de precio. [Seguro] La parrilla intermedia LATAM+Iberia volvió a barajarse y encarecerse: el 15 h 45 vía MAD saltó +188.088 (+11,70%) a 1.796.014; entró un 15 h 55 vía Buenos Aires (EZE) a 1.867.531 (id nuevo LATAM_IB_EZE_1555); y el outlier diurno de 15 h 35 vía MAD (sal. 00:50, IB_MAD_1535_dia) subió +89.008 (+3,48%) hasta 2.649.469, el más caro rastreado. [Probable] Rotación, no oferta: desaparecieron LATAM_AE_MAD_1935 (19 h 35, 1.612.716) y la escala larga vía Lima LATAM_IB_3950 (38 h 55, 1.350.960); ninguno de los entrantes mejora la frontera barato-cómodo. [Suposición] Que 'Recomendado' y 'Más económicos' devolvieran otra vez las mismas 11 filas y el mismo mínimo (1.079.499) sugiere baja rotación de caché intradía. Lectura de conjunto: hoy hay tres niveles reales para el pasajero — ~1,08 M vía Canadá con 33 h y 2 escalas (piso plano); ~1,53 M en directo LEVEL, que hoy es a la vez lo más rápido y lo más barato con comodidad; y ~1,32 M en la autoconexión vía Dublín solo si se aceptan 35 h y el riesgo de recomprar tramo. Movimiento neto de la semana: el piso quedó plano, los directos casi planos, y todo el bloque LATAM+Iberia de una escala se encareció 3–12%, perdiendo su histórico papel de mejor valor por hora."
+    },
+    {
+      "fecha": "2026-07-23 10:20",
+      "hora_utc": "2026-07-23 14:20 UTC",
+      "advertencias": [
+        "No apareció ningún banner global de restricciones de espacio aéreo ('Travel restricted / Airspace restrictions') en esta consulta.",
+        "Las vistas 'Recomendado' y 'Más económicos' devolvieron HOY exactamente los mismos 10 renglones (9 itinerarios tras deduplicar) y el mismo mínimo (CLP 1.147.947); no hubo divergencia entre pestañas (baja rotación de caché intradía).",
+        "Air Canada apareció dos veces idéntica (957 y 954 kg CO2e, mismo precio 1.147.947 y mismo horario 21:55); se dedujo y se conservó una sola fila para AC_YYZ_YUL_3240.",
+        "AC_YYZ_YUL_3240 cambió de horario respecto de ejecuciones previas: ahora 31 h 40 (antes 32 h 40) con salida 21:55 (antes 20:55); se conserva el id estable para continuidad de la serie.",
+        "Itinerario NUEVO de autoconexión ('Conexión por cuenta propia', Arajet + Air Canada) vía Punta Cana (PUJ), Miami (MIA) y Montreal (YUL), 44 h 10, sal. 09:25, a CLP 1.303.273 -> id nuevo SELF_PUJ_MIA_YUL_4410. Sustituye a la autoconexión YYZ/DUB del 15-jul, que hoy desaparece.",
+        "Itinerario NUEVO LATAM+Iberia vía São Paulo (GRU) con escala larga de 17 h 50 (duración total 32 h 20, sal. 20:35) a CLP 1.614.665 -> id nuevo LATAM_IB_GRU_3220; es distinto de los antiguos LATAM_GRU_1855 / LATAM_IB_GRU_1800 (~18-19 h) que desaparecieron a comienzos de julio.",
+        "LATAM_IB_MAD_1720 reaparece con horario cambiado: hoy sale 22:00 (antes 17:00) y su escala en MAD es de 3 h; la duración (17 h 15) coincide con la serie previa (17 h 20), por lo que se conserva el id para continuidad, dejando constancia del cambio de salida.",
+        "Iconos de advertencia de emisiones sobre Air Canada (+49%), sobre la autoconexión Arajet+Air Canada (+65%) y sobre LATAM+Iberia vía GRU (+6%). IB_MAD_1535_dia marca +242% por ser tarifa de clase ejecutiva.",
+        "Desaparecen respecto del 15-jul: LATAM_IB_MAD_1545 (1.796.014), LATAM_IB_EZE_1555 (1.867.531) y SELF_YYZ_DUB_3505 (1.320.336). Se omiten hoy (los gráficos toleran huecos).",
+        "La conexión de Chrome cayó una vez momentáneamente durante la captura; se reintentó de inmediato con el navegador reconectado y la consulta se completó sin más incidencias.",
+        "Ejecución desatendida: al inicio había 2 navegadores Chrome conectados; se eligió automáticamente el más recientemente conectado (no había usuario para elegir). Ese navegador se desconectó a mitad de captura y quedó uno solo, con el que se completó la consulta."
+      ],
+      "itinerarios": [
+        {
+          "id": "AC_YYZ_YUL_3240",
+          "aerolinea": "Air Canada",
+          "escalas": "2 (YYZ, YUL)",
+          "duracion": "31 h 40 min",
+          "duracion_min": 1900,
+          "salida": "21:55",
+          "grupo": "lento",
+          "precio": 1147947
+        },
+        {
+          "id": "SELF_PUJ_MIA_YUL_4410",
+          "aerolinea": "Arajet + Air Canada (autoconexión)",
+          "escalas": "3 (PUJ, MIA, YUL)",
+          "duracion": "44 h 10 min",
+          "duracion_min": 2650,
+          "salida": "09:25",
+          "grupo": "lento",
+          "precio": 1303273
+        },
+        {
+          "id": "LATAM_IB_GRU_3220",
+          "aerolinea": "LATAM + Iberia (vía GRU, escala larga)",
+          "escalas": "1 (GRU)",
+          "duracion": "32 h 20 min",
+          "duracion_min": 1940,
+          "salida": "20:35",
+          "grupo": "lento",
+          "precio": 1614665
+        },
+        {
+          "id": "LATAM_IB_MAD_1825",
+          "aerolinea": "LATAM + Iberia",
+          "escalas": "1 (MAD)",
+          "duracion": "18 h 25 min",
+          "duracion_min": 1105,
+          "salida": "22:00",
+          "grupo": "rapido",
+          "precio": 1689603
+        },
+        {
+          "id": "LEVEL_directo",
+          "aerolinea": "LEVEL",
+          "escalas": "Directo",
+          "duracion": "13 h 25 min",
+          "duracion_min": 805,
+          "salida": "11:50",
+          "grupo": "rapido",
+          "precio": 1791696
+        },
+        {
+          "id": "LATAM_IB_MAD_1720",
+          "aerolinea": "LATAM + Iberia",
+          "escalas": "1 (MAD)",
+          "duracion": "17 h 15 min",
+          "duracion_min": 1035,
+          "salida": "22:00",
+          "grupo": "rapido",
+          "precio": 1793479
+        },
+        {
+          "id": "LATAM_IB_MAD_1610",
+          "aerolinea": "LATAM + Iberia",
+          "escalas": "1 (MAD)",
+          "duracion": "16 h 10 min",
+          "duracion_min": 970,
+          "salida": "21:00",
+          "grupo": "rapido",
+          "precio": 1840996
+        },
+        {
+          "id": "IB_LEVEL_directo",
+          "aerolinea": "Iberia (operado por LEVEL)",
+          "escalas": "Directo",
+          "duracion": "13 h 25 min",
+          "duracion_min": 805,
+          "salida": "11:50",
+          "grupo": "rapido",
+          "precio": 1921961
+        },
+        {
+          "id": "IB_MAD_1535_dia",
+          "aerolinea": "Iberia + LATAM (diurno, clase ejecutiva)",
+          "escalas": "1 (MAD)",
+          "duracion": "15 h 35 min",
+          "duracion_min": 935,
+          "salida": "00:50",
+          "grupo": "rapido",
+          "precio": 2588138
+        }
+      ],
+      "interpretacion": "Verdad incómoda primero: [Seguro] esta semana el mercado se movió en tu contra casi en bloque. Respecto del 15-jul, TODOS los itinerarios que seguían activos subieron, salvo el outlier de clase ejecutiva; las opciones de cabina cómoda se encarecieron entre +6% y +23%. [Seguro] El piso absoluto dejó de estar plano: Air Canada vía YYZ/YUL sube +68.448 (+6,34%) hasta 1.147.947 y además cambió de horario (ahora 31 h 40, sal. 21:55); sigue siendo lo más barato, pero al precio de ~32 h y doble escala. [Seguro] Los directos, que el 15-jul habían quedado como 'lo más barato cómodo', pegaron el mayor salto: LEVEL +262.064 (+17,13%) a 1.791.696 e Iberia/Level +364.396 (+23,40%) a 1.921.961; perdieron ese estatus. [Seguro] El nuevo 'punto dulce' sub-20 h es LATAM+Iberia 18 h 25 (sal. 22:00) a 1.689.603 (+134.640; +8,66%): por primera vez en varias fechas, una escala de ~18 h queda por DEBAJO de ambos directos (~102 mil menos que LEVEL). Detrás, LATAM+Iberia 17 h 15 a 1.793.479 (serie _1720, +13,31%, con salida corrida a las 22:00) y 16 h 10 a 1.840.996 (reaparece tras dos fechas ausente; -4,44% frente a su último dato del 13-jul). [Probable] Segundo en precio aparece una autoconexión NUEVA: Arajet + Air Canada vía Punta Cana, Miami y Montreal (44 h 10, 3 escalas, sal. 09:25) a 1.303.273 (id SELF_PUJ_MIA_YUL_4410); más barata que cualquier escala única de aerolínea, pero exige recoger equipaje y recomprar tramos por cuenta propia (riesgo de conexión sobre el pasajero) y ~44 h de viaje: descartable salvo para cazadores de precio extremos. Reemplaza a la autoconexión vía Dublín del 15-jul, que hoy desaparece. [Probable] Entra también una LATAM+Iberia vía São Paulo con escala larguísima de 17 h 50 (32 h 20 en total) a 1.614.665 (id LATAM_IB_GRU_3220): más barata que las de una escala por MAD, pero con casi un día de espera en GRU. [Suposición] Que 'Recomendado' y 'Más económicos' devolvieran otra vez idénticas filas y el mismo mínimo (1.147.947) sugiere baja rotación de caché intradía. Lectura de conjunto: hoy hay cuatro niveles reales para el pasajero — ~1,15 M vía Canadá con ~32 h y 2 escalas (piso, ya no plano, +6%); ~1,30 M en la autoconexión vía Miami/Montreal solo si se aceptan 44 h y recomprar tramos; ~1,69 M en la mejor combinación cómoda (LATAM+Iberia 18 h 25, una escala), que hoy vence a los directos; y ~1,79 M en el directo LEVEL, que esta semana perdió su ventaja de precio. Movimiento neto: subida generalizada; el mejor valor por hora se desplazó del directo hacia la escala única de LATAM+Iberia."
     }
   ]
 }
