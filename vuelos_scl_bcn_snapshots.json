@@ -2883,6 +2883,162 @@
           "precio": 2683118
         }
       ]
+    },
+    {
+      "fecha": "2026-08-11 08:04",
+      "hora_utc": "2026-08-11 12:04 UTC",
+      "advertencias": [
+        "Primera consulta del 11-ago (08:04 Santiago), ~10 h despues de la de las 21:49. Consulta desde Chrome con sesion Google del titular, region es-419, CLP, vista 'Mas economicos', lista expandida por completo (136 itinerarios unicos tras deduplicar 153 filas).",
+        "VERIFICADO el desplome de Air France 17 h 55 (-13,4%): se comprobo que las otras cuatro variantes de Air France con la misma salida 11:05 (20 h 5, 22 h 55, 23 h 50, 25 h 55) siguen en 1.900.532. La bajada afecta solo al itinerario de 17 h 55, lo que descarta error de lectura o cambio de metodologia.",
+        "Air France 17 h 55 (1.638.717) queda por PRIMERA VEZ por debajo de los dos directos LEVEL (1.689.395 y 1.694.454). Cambia el orden interno del grupo 'rapido'.",
+        "Las autoconexiones Avianca+Vueling (+51.299) y Avianca+Aeromexico (+44.333) revierten casi exactamente la cesion de ~3,5% registrada anoche: [Probable] promo corta ya cerrada.",
+        "IB_MAD_1535_dia e IB_LATAM_MAD_1535_pm figuran hoy al precio IDENTICO 2.609.995 (ayer 2.612.782 y 2.683.118). Convergencia exacta entre dos itinerarios distintos: anomalia a vigilar.",
+        "Se repiten sin cambio las anomalias de ayer: Sky+British via LIM/MIA/LHR con 53 h 5 y 54 h 15 al mismo precio (1.323.308), y tres filas de Avianca compartiendo 1.327.492 (01:35 / 26 h 5; 01:35 / 31 h 55; 07:25 / 26 h 5). Se conservan 53 h 5 y 07:25 / 26 h 5 por continuidad de serie.",
+        "Entrantes NUEVOS no seguidos (contexto): Air Canada+SWISS 36 h 10 via YYZ/ZRH a 1.279.014; Air Canada+Lufthansa City 36 h 35 via YYZ/MUC a 1.282.379; Air Canada 31 h 40 con cambio de aeropuerto a 1.283.629; Air France+KLM 22 h 55 via CDG/AMS a 1.667.661."
+      ],
+      "interpretacion": "Verdad incomoda primero: [Seguro] la unica noticia real de hoy abarata la banda RAPIDA, no el suelo. Air France 17 h 55 (salida 11:05, 1 escala CDG) se desploma -253.298 (-13,4%) hasta 1.638.717 y, por primera vez en la serie, un itinerario de menos de 20 h se pone POR DEBAJO de los directos: LEVEL 13 h 25 cotiza 1.689.395 (+2.823) e Iberia/LEVEL 1.694.454 (-1.811). [Seguro] La caida es especifica de esa tarifa, no un desplome de la aerolinea: las demas variantes de Air France desde 11:05 (20 h 5, 22 h 55, 23 h 50, 25 h 55) siguen ancladas en 1.900.532, es decir por encima de donde estaban ayer. [Probable] Es inventario nuevo en la clase mas barata de ese vuelo concreto, no un reajuste general. [Seguro] Pero el suelo no se mueve: el piso sigue en 1.097.612 (Avianca via BOG 35 h 15), apenas -371 (-0,03%), y los dos candidatos de compra siguen donde estaban -Air Canada 31 h 40 en 1.267.969 (-3.028, -0,24%) y Avianca 20 h 15 en 1.287.890 (+2.725, +0,21%)-. La distancia entre el piso y el nuevo Air France sigue siendo de 541.105 CLP. [Seguro] Movimiento con signo contrario en las autoconexiones Avianca+X, que devuelven la cesion de anoche: Avianca+Vueling +51.299 (+3,4%) a 1.577.838 y Avianca+Aeromexico +44.333 (+2,9%) a 1.555.685; ambas vuelven aproximadamente a su nivel del 10-ago por la manana. [Probable] Aquello fue una promo corta, ya revertida, y confirma que esa familia de productos no marca tendencia. [Seguro] Las dos MAD de 15 h 35 convergen EXACTAMENTE en 2.609.995: la de 00:50 cede -2.787 y la de 12:50 -73.123 (-2,7%) hasta igualarla. Siguen fuera de rango. [Seguro] Tres itinerarios clavados en delta 0 (Sky+British 53 h 5, Avianca 26 h 5, LATAM via GRU). Lectura de conjunto: hoy si hay una decision sobre la mesa, pero es acotada. Si el criterio es precio absoluto, nada cambia: Air Canada 1,27 M o Avianca 20 h 15 a 1,29 M, y el piso de 1,10 M sigue costando 35 h. Si el criterio es tiempo, Air France 17 h 55 a 1,64 M es la mejor oferta rapida que ha dado esta serie. [Suposicion] Frente al directo LEVEL la ventaja es estrecha: 50.678 CLP menos a cambio de 4 h 30 mas y una escala en CDG; a ese diferencial el directo sigue siendo defendible. [Probable] Riesgo de esperar: asimetrico y por primera vez con signo. Una tarifa suelta de este tipo suele durar poco -las autoconexiones de ayer se revirtieron en 10 h-, asi que quien priorice las 17 h 55 tiene motivo para actuar pronto; quien priorice el precio absoluto no tiene ninguna urgencia nueva.",
+      "itinerarios": [
+        {
+          "id": "AVIANCA_BOG_3515",
+          "aerolinea": "Avianca (vía BOG, salida 16:25)",
+          "salida": "16:25",
+          "duracion": "35 h 15 min",
+          "duracion_min": 2115,
+          "escalas": "1 (BOG)",
+          "grupo": "lento",
+          "precio": 1097612
+        },
+        {
+          "id": "AVIANCA_BOG_2015",
+          "aerolinea": "Avianca",
+          "salida": "07:25",
+          "duracion": "20 h 15 min",
+          "duracion_min": 1215,
+          "escalas": "1 (BOG)",
+          "grupo": "lento",
+          "precio": 1287890
+        },
+        {
+          "id": "AC_YYZ_YUL_3240",
+          "aerolinea": "Air Canada",
+          "salida": "21:55",
+          "duracion": "31 h 40 min",
+          "duracion_min": 1900,
+          "escalas": "2 (YYZ, YUL)",
+          "grupo": "lento",
+          "precio": 1267969
+        },
+        {
+          "id": "SELF_LIM_MIA_LHR_5305",
+          "aerolinea": "Sky Airline + British Airways (autoconexión)",
+          "salida": "07:00",
+          "duracion": "53 h 5 min",
+          "duracion_min": 3185,
+          "escalas": "3 (LIM, MIA, LHR)",
+          "grupo": "lento",
+          "precio": 1323308
+        },
+        {
+          "id": "AVIANCA_BOG_2605",
+          "aerolinea": "Avianca",
+          "salida": "07:25",
+          "duracion": "26 h 5 min",
+          "duracion_min": 1565,
+          "escalas": "1 (BOG)",
+          "grupo": "lento",
+          "precio": 1327492
+        },
+        {
+          "id": "SELF_AC_TAP_YYZ_LIS_3550",
+          "aerolinea": "Air Canada + Tap Air Portugal (autoconexión)",
+          "salida": "21:55",
+          "duracion": "35 h 50 min",
+          "duracion_min": 2150,
+          "escalas": "2 (YYZ, LIS)",
+          "grupo": "lento",
+          "precio": 1473601
+        },
+        {
+          "id": "SELF_AV_AM_BOG_MEX_2940",
+          "aerolinea": "Avianca + Aeroméxico (autoconexión)",
+          "salida": "01:35",
+          "duracion": "29 h 40 min",
+          "duracion_min": 1780,
+          "escalas": "2 (BOG, MEX)",
+          "grupo": "lento",
+          "precio": 1555685
+        },
+        {
+          "id": "SELF_AV_VY_BOG_LHR_2740",
+          "aerolinea": "Avianca + Vueling (autoconexión)",
+          "salida": "16:25",
+          "duracion": "27 h 40 min",
+          "duracion_min": 1660,
+          "escalas": "2 (BOG, LHR)",
+          "grupo": "lento",
+          "precio": 1577838
+        },
+        {
+          "id": "LATAM_GRU_2345",
+          "aerolinea": "LATAM (op. LATAM Brasil, vía GRU escala larga)",
+          "salida": "04:45",
+          "duracion": "24 h 15 min",
+          "duracion_min": 1455,
+          "escalas": "1 (GRU)",
+          "grupo": "lento",
+          "precio": 1692990
+        },
+        {
+          "id": "AF_CDG_1755",
+          "aerolinea": "Air France",
+          "salida": "11:05",
+          "duracion": "17 h 55 min",
+          "duracion_min": 1075,
+          "escalas": "1 (CDG)",
+          "grupo": "rapido",
+          "precio": 1638717
+        },
+        {
+          "id": "LEVEL_directo",
+          "aerolinea": "LEVEL",
+          "salida": "11:50",
+          "duracion": "13 h 25 min",
+          "duracion_min": 805,
+          "escalas": "Directo",
+          "grupo": "rapido",
+          "precio": 1689395
+        },
+        {
+          "id": "IB_LEVEL_directo",
+          "aerolinea": "Iberia (operado por LEVEL)",
+          "salida": "11:50",
+          "duracion": "13 h 25 min",
+          "duracion_min": 805,
+          "escalas": "Directo",
+          "grupo": "rapido",
+          "precio": 1694454
+        },
+        {
+          "id": "IB_MAD_1535_dia",
+          "aerolinea": "Iberia + LATAM (vía MAD, salida 00:50)",
+          "salida": "00:50",
+          "duracion": "15 h 35 min",
+          "duracion_min": 935,
+          "escalas": "1 (MAD)",
+          "grupo": "rapido",
+          "precio": 2609995
+        },
+        {
+          "id": "IB_LATAM_MAD_1535_pm",
+          "aerolinea": "Iberia + LATAM (vía MAD, salida 12:50)",
+          "salida": "12:50",
+          "duracion": "15 h 35 min",
+          "duracion_min": 935,
+          "escalas": "1 (MAD)",
+          "grupo": "rapido",
+          "precio": 2609995
+        }
+      ]
     }
   ]
 }
