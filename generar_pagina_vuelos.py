@@ -82,7 +82,7 @@ const previo = snaps.length > 1 ? snaps[snaps.length-2] : null;
 const fechas = snaps.map(s => s.fecha);
 
 document.getElementById("resumen").textContent =
-  "Consultas acumuladas: " + snaps.length + " · Última consulta: " + ultimo.fecha + " " + (ultimo.hora_utc||"") + " UTC · Fuente: " + DATA.fuente_principal;
+  "Consultas acumuladas: " + snaps.length + " · Última consulta: " + ultimo.fecha + " (hora de Santiago)" + (ultimo.hora_utc ? " · " + ultimo.hora_utc : "") + " · Fuente: " + DATA.fuente_principal;
 
 const _fr = document.getElementById("frescura");
 if (_fr) _fr.innerHTML = "🟢 Datos cargados en vivo desde el JSON en cada visita (sin caché) · Página generada: " + BUILD_UTC + " · <a href='#' onclick='location.reload();return false;'>recargar ahora</a>";
